@@ -10,9 +10,7 @@ import dotenv from "dotenv";
   const sitemapUrl = process.env.SITEMAP_URL;
   const urls = await getSitemapUrls(sitemapUrl);
 
-  const arr = urls.splice(0, 12);
-
-  const urlList = arr.map((url) => {
+  const urlList = urls.map((url) => {
     return {
       fileUrl: url.replace(/(^\w+:|^)\/\//, "").replace(/\//g, "-"),
       url,
